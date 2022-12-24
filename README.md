@@ -1,7 +1,6 @@
 # Demo: Use yalantinglibs Git Submodule
 
-Thanks to [@piperoc](https://github.com/piperoc), and the demo code is [here](https://github.com/PikachuHyA/yalantinglibs_as_submodule_demo).
-
+Thanks to [@piperoc](https://github.com/piperoc)
 
 **Step 1**: create your project directory mkdir `~/code/awesome-solution` and cd `~/code/awesome-solution`.
 
@@ -9,6 +8,17 @@ Thanks to [@piperoc](https://github.com/piperoc), and the demo code is [here](ht
 
 **Step 3**: add the library as a ***true submodule*** with  `git submodule add https://github.com/alibaba/yalantinglibs.git` .
 At this point you should have a file system structure like:
+
+```
+awesome-solution
+├── .git
+├── .gitmodules
+└── yalantinglibs
+```
+
+
+**Step 4**: there are often more than one project using the library in the solution. In our demo, there would be a client app and a server app that both use the library. Those apps would be separate projects, so the file system will start looking like:
+
 
 ```
 awesome-solution
@@ -23,8 +33,6 @@ awesome-solution
 │    ├── service.h
 └─── yalantinglibs
 ```
-
-**Step 4**: there are often more than one project using the library in the solution. In our demo, there would be a client app and a server app that both use the library. Those apps would be separate projects, so the file system will start looking like:
 
 **Step 5**: here's the root CMakeLists.txt (it's very important to set the compiler flags as I'm running g++ 10.3.0)
 
