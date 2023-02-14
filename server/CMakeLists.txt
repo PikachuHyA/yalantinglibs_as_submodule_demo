@@ -1,2 +1,2 @@
 add_executable(server server.cpp)
-target_link_libraries(server PRIVATE libcoro_rpc)
+target_link_libraries(server PRIVATE yalantinglibs::coro_rpc)
